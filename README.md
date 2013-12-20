@@ -1,7 +1,7 @@
-http://openjerseycity.org
+http://codefornewark.org
 ===================
 
-Landing page for *OpenJC*
+Landing page for *Code for Newark*
 
 Note that branch `gh-pages` is what shows on production codeforhamptonroads.org. Master does nothing.
 
