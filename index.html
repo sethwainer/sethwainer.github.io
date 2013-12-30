@@ -39,6 +39,16 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+	<script>
+	$(function() {
+		$('a').click(function(){
+		$('html, body').animate({
+			scrollTop: $( $(this).attr('href') ).offset().top
+		}, 500);
+		return false;
+		});
+	});
+	</script>
 <style>
 .memberbox{margin-top:15px; margin-bottom:10px;}
 .memberbox h2{color:#aaa; font-size:150%; margin-bottom:0}
@@ -70,13 +80,13 @@
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#projects">Lessons</a></li>
-                <li><a href="#meetup">Teach</a></li>
-                <li><a href="#meetup">Volunteer</a></li>
-                <li><a href="#meetup">Open Data</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#learn">Learn</a></li>
+                <li><a href="#teach">Teach</a></li>
+                <li><a href="#meetup">Meetup</a></li>
+				<li><a href="#group">The Group</a></li>
+                <li><a href="#opendata">Open Data</a></li>
                 <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
-                <li class="dropdown" id="menu1">
+                <!--<li class="dropdown" id="menu1">
                   <a href="#menu1" class="dropdown-toggle" data-toggle="dropdown">
                     Resources
                     <b class="caret"></b>
@@ -92,13 +102,6 @@
                         <i class=icon-user icon-white></i>
                         Our Gatherings on Meetup</a>
                     </li>
-                    <!--
-                    <li>
-                      <a href="http://webchat.freenode.net?channels=codeforva&uio=d4">
-                        <i class=icon-bullhorn icon-white></i>
-                        Our chat on freenode IRC</a></a>
-                    </li>
-                    -->
                     <li>
                       <a href="https://trello.com/b/ScTB41u1/open-jc-backlog">
                         <i class=icon-bullhorn icon-white></i>
@@ -109,14 +112,7 @@
                         <i class=icon-wrench icon-white></i>
                         Our Code on GitHub</a>
                     </li>
-                    <!--
-                    <li>
-                      <a href="http://c4hrva.uservoice.com/">
-                      <i class=icon-thumbs-up icon-white></i>
-                      Idea List for Civic Apps and Open Data</a>
-                    </li>
-                    -->
-                    <li>
+                     <li>
                       <a href="https://drive.google.com/folderview?usp=sharing&id=0B64R59naN_elRGc3UVc3V1lCXzg#">
                         <i class=icon-folder-open icon-white></i>
                         Our Docs on Google</a>
@@ -129,21 +125,14 @@
                         <i class=icon-retweet icon-white></i>
                         #cfabrigade - National Tweets</a>
                     </li>
-                    <!--
-                    <li>
-                      <a href="http://citycamphrva.govfresh.com/">
-                        <i class=icon-bullhorn icon-white></i>
-                        Kevin's "CityCamp" Blog</a>
-                    </li>
-                    -->
                     <li>
                       <a href="http://codeforamerica.tumblr.com/">
                         <i class=icon-bullhorn icon-white></i>
                         Bridage's Tumblr</a>
-                      </li>
+                     </li>
                       
                   </ul>
-                </li>
+                </li>-->
               </ul>
             </div><!--/.nav-collapse -->
           </div><!-- /.navbar-inner -->
@@ -170,9 +159,9 @@
             <div class="carousel-caption">
               <h1>We Code for Newark.</h1>
               <p class="lead">
-                We are a local chapter of Code for America Brigade supporting learning, teaching, and vonteering to code.
+                We are a local brigade of Code for America that facilitates learning, teaching, and volunteering to code.
               </p>
-              <a class="btn btn-large btn-primary" href="http://www.meetup.com/Open-JC/">Find a Lesson</a>
+              <a class="btn btn-large btn-primary" href="#learn">Find a Lesson</a>
             </div>
           </div>
         </div>
@@ -195,8 +184,8 @@
         <div class="span4">
           <img src="images/captain.png" alt="CfA Brigade Captain" />
           <h2>Come To Our Meetups</h2>
-          <p>A casual <a href="http://www.meetup.com/Open-JC/">weekly meetup</a> where 
-             we work on projects and hack open data.</p>
+          <p>A casual <a href="http://www.meetup.com/BrickCityTech/">weekly meetup</a> where 
+             we get together to learn tech entrepreneurship.</p>
           <p><a class="btn" href="#meetup">View details &raquo;</a></p>
         </div><!-- /.span4 -->
 
@@ -206,7 +195,7 @@
           <p><a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/openjc">
             An open conversation online</a> about what we're doing now and what's next. <!--We're also on
             freenode IRC at <a href="http://webchat.freenode.net?channels=codeforva&uio=d4">#codeforva</a>.--></p>
-          <p><a class="btn" href="#groups">View details &raquo;</a></p>
+          <p><a class="btn" href="#group">View details &raquo;</a></p>
         </div><!-- /.span4 -->
 
         <div class="span4">
@@ -225,29 +214,43 @@
  <hr class="featurette-divider">
 
       <div class="featurette">
+        <img class="featurette-image pull-left" style="padding-bottom: 75px" src="images/brain.png" alt="Brain" id="learn" name="learn" />
+        <h2 class="featurette-heading">Learn: <span class="muted">Invest in Yourself by Learning Code.</span></h2>
+        <p class="lead">
+          <ul class="lead">
+            <li>
+              <a href="http://codecrew.co/introduction-to-programming-fundamentals-with-javascript/">Learn the basics with JavaScript!</a>
+              Sign up with CodeCrew and learn with other Newark Techies</li>
+            <li>
+              Ruby on Rails class coming soon!</li>
+          </ul>
+        </p>
+      </div>
+ 
+  <hr class="featurette-divider">
+
+      <div class="featurette">
+        <img class="featurette-image pull-left" style="padding-bottom: 75px" src="images/teach.png" alt="Teach" id="teach" name="teach" />
+        <h2 class="featurette-heading">Teach: <span class="muted">Give Back to the Community by Teaching Others to Code.</span></h2>
+        <p class="lead">
+          <ul class="lead">
+            <li>
+              <a href="http://beta.ci.newark.nj.us/newark-2-0/hour-of-code/volunteer/">Volunteer to Teach</a>
+              Volunteer to teach in Newark schools and show students that whatever their interests, coding is the way to get there</li>
+            <li>
+              <a href="http://www.nj.com/education/2013/12/newark_students_and_tech_compa.html">Read</a> about our exciting Hour of Code event where we reached over 400 students!</li>
+          </ul>
+        </p>
+      </div>
+	  
+ <!-- <hr class="featurette-divider">
+
+      <div class="featurette">
         <img class="featurette-image pull-left" style="padding-bottom: 75px" src="images/noun_project_756_citizen.png" alt="Citizen" id="projects" name="projects" />
         <h2 class="featurette-heading">Works In Progress: <span class="muted">Some Of Our Projects.</span></h2>
         <p class="lead">
           <ul class="lead">
-            <!--
             <li>
-              (LIVE) HRT Bus Finder: Real-Time Bus Tracking
-              (<a href="http://hrtb.us/">demo</a>)
-              (<a href="https://github.com/c4hrva/hrt-bus-finder">code</a>)</li>
-            <li>
-              (LIVE) Hampton Roads Local Wiki
-              (<a href="http://hrvawiki.org/">wiki</a>)
-            <li>
-              (LIVE) IArtNorfolk: Local Fine Art
-              (<a href="http://iartnorfolk.com/">demo</a>)
-              (<a href="https://github.com/c4hrva/iArtNorfolk">code</a>)</li>
-            <li>
-              (pre-beta) Heat Maps of VB Traffic
-              (<a href="http://dev.bowdenweb.com/od/heatmap-js/demo/maps_heatmap_layer/gmaps-vb-adt-2012.html">demo</a>)
-              (<a href="https://github.com/jalbertbowden/vb-adt-heatmaps">code</a>)</li>
-            -->
-            <li>
-              <!-- <a href="http://c4hrva.uservoice.com/">List of Future Ideas!</a> -->
               <a href="https://docs.google.com/document/d/1sKzKnp6YgVzQduvsjSqSrGl7KE4TALR-FTQLvubB04k/edit#heading=h.8ibv2o3oiwnv">List of Future Ideas!</a>
               Submit your Own Ideas, or Pick One To Help With</li>
             <li>
@@ -255,8 +258,45 @@
               Use to create usefull and fun things.</li>
           </ul>
         </p>
+      </div> -->
+
+  <hr class="featurette-divider">
+
+      <div class="featurette">
+        <a href="http://www.meetup.com/BrickCityTech/">
+          <img name="meetup" id="meetup" class="featurette-image pull-left" src="images/bct.jpeg" alt="Meetup.com" />
+          </a>
+        <h2 class="featurette-heading">We Meet Often. <span class="muted">Come Join Us.</span></h2>
+        <p class="lead">View our <a href="http://www.meetup.com/BrickCityTech/">
+          Meetups site</a> for our next location and time. We meet every other
+          Tuesday where we hear from speakers, hack (develop) our projects,
+          or brainstorm on current issues and activities around Newark, New Jersey. It's actually a lot of fun, with great people and usually food/drink.</p>
+      </div>
+  
+  <hr class="featurette-divider">
+
+      <div class="featurette">
+        <a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/codefornewark">
+          <img name="group" id="group" class="featurette-image pull-right" src="images/google_groups.png" alt="Google Groups" />
+        </a>
+        <h2 class="featurette-heading">We Discuss Things Online. <span class="muted">Join and Introduce Yourself.</span></h2>
+        <p class="lead">
+          Can't make it to a meetup?  No problem. We collaborate on projects, ask for help, and post wins
+          to our <a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/codefornewark">Code for Newark forum</a> where you can get new posts in email and reply. We welcome anyone to sign-up... you might just see something you're interested in helping with. <!--We're also in IRC chat on freenode.net channel <a href="http://webchat.freenode.net?channels=codeforva&uio=d4">#codeforva</a>.--></p>
       </div>
 
+  <hr class="featurette-divider">
+
+      <div class="featurette">
+        <a href="http://data.ci.newark.nj.us">
+          <img name="opemdata" id="opendata" class="featurette-image pull-right" src="images/NewarkOpenData.jpg" alt="Data" />
+        </a>
+        <h2 class="featurette-heading">Data Data Data. <span class="muted">It Is All About The Data.</span></h2>
+        <p class="lead">
+          Part of our mission is to help the City of Newark open up their datasets to the public.  We want the data for our neighborhoods, our businesses, and our future.
+          Click <a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/codefornewark">here</a> to see some of the data currently available.
+      </div>
+	  
   <hr class="featurette-divider">
 
       <div class="featurette">
@@ -273,37 +313,12 @@
               inspirational TED talk given by Jennifer Pahlka, the founder of Code for America.</a></p>
       </div>
 
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <a href="http://www.meetup.com/Open-JC/">
-          <img name="meetup" id="meetup" class="featurette-image pull-left" src="images/meetup.jpg" alt="Meetup.com" />
-          </a>
-        <h2 class="featurette-heading">We Meet Often. <span class="muted">Come Join Us.</span></h2>
-        <p class="lead">View our <a href="http://www.meetup.com/Open-JC/">
-          Meetups site</a> for our next location and time. We meet every other
-          Tuesday where we hack (develop) our projects,
-          or brainstorm on current issues and activities around Jersey City, New Jersey. It's actually a lot of fun, with great people and usually food/drink.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/openjc">
-          <img name="groups" id="groups" class="featurette-image pull-right" src="images/google_groups.png" alt="Google Groups" />
-        </a>
-        <h2 class="featurette-heading">We Discuss Things Online. <span class="muted">Join and Introduce Yourself.</span></h2>
-        <p class="lead">
-          Can't make it to a meetup?  No problem. We collaborate on projects, ask for help, and post wins
-          to our <a href="https://groups.google.com/a/codeforamerica.org/forum/#!forum/openjc">Open JC forum</a> where you can get new posts in email and reply. We welcome anyone to sign-up... you might just see something you're interested in helping with. <!--We're also in IRC chat on freenode.net channel <a href="http://webchat.freenode.net?channels=codeforva&uio=d4">#codeforva</a>.--></p>
-      </div>
-
-      <hr class="featurette-divider">
+  <hr class="featurette-divider">
 
       <div class="featurette">
         <img name="contact" id="contact" class="featurette-image pull-right" src="">
         <h2 class="featurette-heading">Want Even More Info? <span class="muted">Contact Us.</span></h2>
-        <p class="lead">Our Brigade Organizers are Anna Lukasiak (<a href="mailto:adlukasiak@gmail.com">adlukasiak@gmail.com</a> or <a href="https://twitter.com/adlukasiak">@adlukasiak</a>) and Stephen Musgrave (<a href="mailto:stephen@musgrave.org">stephen@musgrave.org</a> or <a href="https://twitter.com/stephenmusgrave">@stephenmusgrave</a>) and we want to hear from you!</p>
+        <p class="lead">Our Brigade Organizers are Anthony Frasier (<a href="mailto:anthony@thephatstartup.com">anthony@thephatstartup.com</a> or <a href="https://twitter.com/AnthonyFrasier">@AnthonyFrasier</a>) and Jimi Olaghere (<a href="mailto:jimi@geekcook.net">jimi@geekcook.net</a> or <a href="https://twitter.com/olagherej">@olagherej</a>) and we want to hear from you!</p>
       </div>
 
       <hr class="featurette-divider">
@@ -314,7 +329,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>Built by <a href="http://codeforhamptonroads.org/" target="_blank">Code for Hampton Roads</a> and Maintained by <a href="https://github.com/openjc" target="_blank">Open JC</a>. Site Design Based on <a href="http://getbootstrap.com/">Bootstrap</a>, Some Images Provided by <a href="http://thenounproject.com">The Noun Project</a>.</p>
+        <p>Built by <a href="http://codeforhamptonroads.org/" target="_blank">Code for Hampton Roads</a> and Maintained by Code for Newark. Site Design Based on <a href="http://getbootstrap.com/">Bootstrap</a>, Some Images Provided by <a href="http://thenounproject.com">The Noun Project</a>.</p>
       </footer>
 
     </div><!-- /.container -->
