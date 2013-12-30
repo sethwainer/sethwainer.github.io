@@ -41,12 +41,30 @@
     <![endif]-->
 	<script>
 	$(function() {
-		$('a').click(function(){
-		$('html, body').animate({
-			scrollTop: $( $(this).attr('href') ).offset().top
-		}, 500);
-		return false;
+	
+		$('#backtotop').fadeOut("fast");
+		
+		$(window).scroll(function() { // when the page is scrolled run this
+			if($(this).scrollTop() != 0) { // if you're NOT at the top
+				$('#backtotop').fadeIn("fast"); // fade in
+			} else { // else
+			$('#backtotop').fadeOut("fast"); // fade out
+			}
 		});
+		
+		$('#backtotop').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+		
+		$('a').click(function(){
+			$('html, body').animate({
+				scrollTop: $( $(this).attr('href') ).offset().top
+			}, 500);
+		return false;
+		});		
 	});
 	</script>
 <style>
@@ -328,7 +346,7 @@
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p class="pull-right" id="backtotop"><a href="#">Back to top</a></p>
         <p>Built by <a href="http://codeforhamptonroads.org/" target="_blank">Code for Hampton Roads</a> and Maintained by Code for Newark. Site Design Based on <a href="http://getbootstrap.com/">Bootstrap</a>, Some Images Provided by <a href="http://thenounproject.com">The Noun Project</a>.</p>
       </footer>
 

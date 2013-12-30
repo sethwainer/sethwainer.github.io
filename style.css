@@ -166,6 +166,24 @@
       letter-spacing: -1px;
     }
 
+	/* -------Back to top --------------*/
+	
+	#backtotop{
+	position: fixed;
+	right:5px;
+	bottom:15px
+	}
+	#backtotop a{
+	text-decoration:none;
+	border:0 none;
+	display:block;
+	/*width:26px;
+	height:150px;*/
+	}
+	
+	#backtotop a:hover{
+	opacity:.8; /*mouse over fade effect*/
+	}
 
 
     /* RESPONSIVE CSS
